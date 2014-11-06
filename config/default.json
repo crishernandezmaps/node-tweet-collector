@@ -1,0 +1,14 @@
+{
+  "Database" : {
+    "Host" : "localhost",
+    "Port" : 27017,
+    "Name" : "node-tweet-collector"
+  },
+	"Twitter" : {
+		"consumer_key" : "te2k9PiBDjNFv2bHzUxjMmQS0",
+    "consumer_secret" : "BBYZGN9wkvSoianEe6Shddei5yg81Vjr2w0IDoFoBy4UIfj4wu",
+    "token" : "1323357103-M4rAhXqWgf7IQMUwGUFQLX3WSLz61m1zALA2tK2",
+    "token_secret" : "aRj6HEWF7jYHnuXIJd3lZQ1g69mwSGqJHEMf75hO0Cr1w",
+		"tracked_keyword" : "nodejs"
+	}
+}

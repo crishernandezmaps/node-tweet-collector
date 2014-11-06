@@ -1,0 +1,43 @@
+{
+  "name": "node-tweet-collector",
+  "version": "0.1.0",
+  "description": "Node, Twitter Stream API, Mongo DB Tweet Collector",
+  "author": "Zenek Palmer <zen.palmer@gmail.com>",
+  "contributors": [{}],
+  "bin": {},
+  "script": {
+    "test": "",
+    "start": "node app.js",
+    "predeploy": "echo im about to deploy",
+    "postdeploy": "echo ive deployed",
+    "prepublish": ""
+  },
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenekp/node-tweet-collector"
+  },
+  "bugs": {
+    "url": "https://github.com/zenekp/node-tweet-collector/issues"
+  },
+  "keywords": [
+    "node",
+    "mongodb"
+  ],
+  "dependencies": {
+    "mongodb": "1.3.x",
+    "mongoose": "3.8.x",
+    "restify": "2.6.x",
+    "config": "0.4.x",
+		"node-tweet-stream": "1.6.0",
+    "mongoose-unique-validator": "0.3.x",
+   	"socket.io": "1.2.0"
+  },
+  "devDependencies": {},
+  "preferGlobal": true,
+  "private": true,
+  "publishConfig": {},
+  "subdomain": "",
+  "analyze": true,
+  "license": "MIT"
+}
