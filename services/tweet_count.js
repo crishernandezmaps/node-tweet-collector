@@ -12,7 +12,7 @@ exports.routes = function(server, constants, trackedKeyword) {
 	
 		var TweetCount = require(root+"/models/tweet_count");
 		
-		TweetCount.getLeaderboard(params, 5, function(err, items) {
+		TweetCount.getLeaderboard(params, 10, function(err, items) {
 			if (err) {
 				res.send(403, err.errors);
 			} else {

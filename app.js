@@ -12,14 +12,18 @@ var server = restify.server;
 
 require("./services/tweet_count").routes(server, constants, trackedKeyword);
 
-restify.start();
 
 var root = constants.ROOT;
 
 var TweetCount = require(root+"/models/tweet_count");
 
-var twitter = require("./twitter");
+var io = require('socket.io')(server);
 
+restify.start();
+
+
+
+var twitter = require("./twitter");
 
 twitter.connection.on('tweet', function (tweet) { 
 	
@@ -61,6 +65,14 @@ twitter.connection.on('tweet', function (tweet) {
 			}
 		}
 	});
+	
+	var params = {
+		tracked_keyword : trackedKeyword
+	};
+
+	TweetCount.getLeaderboard(params, 10, function(err, items){
+		io.emit('leaderboard', items);
+	})
 })
 
 twitter.connection.on('error', function (err) {

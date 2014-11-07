@@ -41,6 +41,6 @@ exports.getLeaderboard = function(params, limit, cb) {
 	tweetCount
 		.find(params)
 		.sort({count: -1, date_updated: -1})
-		.limit(4)
+		.limit(limit)
 		.exec(cb);
 }
