@@ -4,7 +4,8 @@ exports.routes = function(server, constants, trackedKeyword) {
 
 	var root = constants.ROOT;
 		
-	server.get('/tweet_count', function send(req, res, next) {
+	server.get('/tweet_count', function send(req, res, next) {	
+		res.header('Access-Control-Allow-Origin', req.headers.origin);
 			
 		var params = {
 			tracked_keyword : trackedKeyword
