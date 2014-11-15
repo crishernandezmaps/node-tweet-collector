@@ -11,9 +11,14 @@ exports.routes = function(server, constants, trackedKeyword) {
 			tracked_keyword : trackedKeyword
 		};
 	
+		var sort = {
+			// count: -1, 
+			date_updated: -1
+		}
+	
 		var TweetCount = require(root+"/models/tweet_count");
 		
-		TweetCount.getLeaderboard(params, 10, function(err, items) {
+		TweetCount.getLeaderboard(params, 10, sort, function(err, items) {
 			if (err) {
 				res.send(403, err.errors);
 			} else {

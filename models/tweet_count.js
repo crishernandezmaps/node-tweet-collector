@@ -14,6 +14,9 @@ var TweetCountSchema = mongoose.Schema({
 	tracked_keyword:{
 		type: String
 	},
+	last_tweet:{
+		type: String
+	},
 	count:{
 		type: Number,
 		default: 1,
@@ -37,10 +40,10 @@ var tweetCount = mongoose.model('TweetCount', TweetCountSchema);
 
 exports.Class = tweetCount;
 
-exports.getLeaderboard = function(params, limit, cb) {	
+exports.getLeaderboard = function(params, limit, sort, cb) {	
 	tweetCount
 		.find(params)
-		.sort({count: -1, date_updated: -1})
+		.sort(sort)
 		.limit(limit)
 		.exec(cb);
 }
